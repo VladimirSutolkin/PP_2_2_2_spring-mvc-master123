@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<br>
+<br>
+
+<div class="container">
+
+    <div th:each="car : ${cars}" class="card mb-2 mr-2">
+        <div class="card-header" th:text="${car.getModel()}"/>
+
+            <li class="list-group-item" th:text="|Цвет: ${car.getColor()}|"/>
+            <li class="list-group-item"
+                th:text="|Цена: ${#numbers.formatDecimal(car.getPrice(), 0, 'COMMA', 2, 'POINT')} руб.|"/>
+
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</body>
+</html>
